@@ -1,0 +1,93 @@
+<section id="offers">
+
+	<form validate-on="blur" name="registration-form" class="pure-form pure-form-stacked">
+
+		<section id="registration-person" [class.hidden]="currentFormPart !== 'person'">
+			<legend>Who are you?</legend>
+
+			<fieldset>
+				<label for="name">Name</label>
+				<input id="name" name="user-name" type="text" [(ng-model)]="user.name" />
+			</fieldset>
+
+			<fieldset>
+				<label for="gender">Gender</label>
+				<label for="gender" class="pure-radio">
+					<input id="gender" type="radio" [(ng-model)]="user.gender" value="male"/>
+					male
+				</label>
+
+				<label for="gender" class="pure-radio">
+					<input type="radio" [(ng-model)]="user.gender" value="female"/>
+					female
+				</label>
+			</fieldset>
+
+			<fieldset>
+				<label for="state">State</label>
+				<select id="state" [(ng-model)]="user.state">
+					<option>NH</option>
+					<option>ZH</option>
+					<option>ZE</option>
+					<option>UT</option>
+				</select>
+			</fieldset>
+		</section>
+
+		<section id="contact-form" [class.hidden]="currentFormPart !== 'contact'">
+			<legend>How can we contact you?</legend>
+
+			<fieldset>
+				<label for="email">Email</label>
+				<input id="email" name="user-email" type="text" [(ng-model)]="user.email" placeholder="Email" />
+			</fieldset>
+
+			<fieldset>
+				<label for="phone">Telephone</label>
+				<input id="phone" name="user-telephone" type="tel" [(ng-model)]="user.phone" placeholder="Telephone"/>
+			</fieldset>
+		</section>
+
+		<section id="registration-payment" [class.hidden]="currentFormPart !== 'payment'">
+			<legend>How would you like to pay?</legend>
+
+			<fieldset>
+				<label for="creditcard">Creditcard</label>
+				<input id="creditcard" name="user-creditcard" type="number" [(ng-model)]="user.creditcard" placeholder="Creditcard"/>
+			</fieldset>
+		</section>
+
+		<section id="registration-summary" [class.hidden]="currentFormPart !== 'summary'">
+			<legend>Summary</legend>
+			<fieldset>
+				<dl>
+					<dt>Name</dt>
+					<dd>{{user.name}}</dd>
+					<dt>Gender</dt>
+					<dd>{{user.gender}}</dd>
+					<dt>State</dt>
+					<dd>{{user.state}}</dd>
+					<dt>Email</dt>
+					<dd>{{user.email}}</dd>
+					<dt>Telephone</dt>
+					<dd>{{user.phone}}</dd>
+					<dt>Name</dt>
+					<dd>{{user.creditcard}}</dd>
+				</dl>
+			</fieldset>
+		</section>
+
+		<ul *ng-for="#errorMessage of errorMessages" role="alert">
+			<li>{{errorMessage}}</li>
+		</ul>
+
+		<nav>
+			<ul>
+				<li><a ng-click="goPrevious()" class="pure-button">Previous</a></li>
+				<li><button ng-click="goNext()" class="pure-button pure-button-primary">Next</button></li>
+			</ul>
+		</nav>
+
+	</form>
+
+</section>

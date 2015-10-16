@@ -1,0 +1,28 @@
+<section>
+    <h2>Your cart</h2>
+
+    <table id="cart-list" class="pure-table pure-table-bordered">
+        <thead>
+        <tr>
+            <th>Hotel</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ng-for="#offer of cart">
+            <td>{{offer.name}}</td>
+            <td>{{offer.price}}</td>
+            <td>
+                <button class="pure-button" (click)="removeOfferFromCart(offer)">remove from cart</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <p id="amount-container">Amount: {{amount}}</p>
+
+    <button class="pure-button pure-button-primary" (click)="pay()" title="pay">Pay</button>
+
+</section>

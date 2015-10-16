@@ -1,0 +1,16 @@
+<header>
+  <nav class="pure-menu pure-menu-horizontal">
+    <a href="#" class="pure-menu-heading">HOTELBOOKING</a>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item"><a [router-link]="['/Offers']" class="pure-menu-link">Offers</a></li>
+      <li class="pure-menu-item"><a [router-link]="['/Cart']" class="pure-menu-link">Cart</a></li>
+      <li class="pure-menu-item"><a [router-link]="['/Registration']" class="pure-menu-link">Registration</a></li>
+      <li class="pure-menu-item"><a [router-link]="['/Users']" class="pure-menu-link">Users</a></li>
+    </ul>
+  </nav>
+</header>
+
+<article>
+  <router-outlet></router-outlet>
+</article>
+

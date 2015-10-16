@@ -1,0 +1,111 @@
+
+/* #666965 (dark gray) */
+/* #f9b022 (dark yellow) */
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Capita-Light', serif;
+    font-size: 14px;
+    color: #666965;
+    background-image: url("../img/watermark.png");
+    background-size: cover;
+}
+h1,h2,h3,h4, h5, h6 {
+    font-family: 'Cachet', 'Ubuntu', sans-serif;
+    margin: 0 0 1em 0;
+    padding:0;
+    font-weight:400;
+    color:#666965;
+}
+h1 {
+    font-size: 2em;
+    font-weight: 300;
+}
+h2 {
+    font-size:1.5em;
+    font-weight: bold;
+    margin: 0.5em 0 0.5em 0;
+    color: #666965;
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+h3 {
+	font-size:1.25em;
+	margin: 0.5em 0 0.5em 0;
+}
+
+header {
+    font-family: 'Cachet', 'Ubuntu', sans-serif;
+}
+
+article {
+    margin: 1em;
+}
+
+form label {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+table {
+    background-color: white;
+}
+
+nav ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+dl dt {
+    font-weight: bold;
+}
+
+fieldset {
+    margin-bottom: 0.5em;
+}
+
+*[role='alert'] {
+	border-radius: 0.3em;
+	border: 2px solid red;
+	background-color: #e38d13;
+	color: black;
+	font-weight: bold;
+	padding: 1em;
+	list-style: none;
+	width: 20%;
+}
+
+/* overriding purecss style classes */
+
+.pure-button-primary {
+	background-color: #f9b022;
+	color: #666965;
+}
+
+.pure-menu {
+    background-color: #666965;
+    padding: 1.5em;
+}
+
+.pure-menu-heading, .pure-menu-link {
+    color: white;
+    font-size: 1.1em;
+}
+
+.pure-menu-link:hover, .pure-menu-link:active, .pure-menu-link:focus{
+    color: #666965 !important;
+    background-color: #f9b022 !important;
+}
+
+.pure-table thead th {
+    background-color: #f9b022;
+}

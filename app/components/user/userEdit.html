@@ -1,0 +1,17 @@
+<h3>Edit user</h3>
+
+<!-- partial template loaded into parent template at 'ui-view="userEdit"' -->
+
+<form name="user-form" class="pure-form pure-form-stacked">
+	<fieldset>
+		<label for="name">Name</label>
+		<input id="name" name="user-name" type="text" [(ng-model)]="user.name" />
+	</fieldset>
+
+	<fieldset>
+		<label for="email">Email</label>
+		<input id="email" name="user-email" type="text" [(ng-model)]="user.email" placeholder="Email" />
+	</fieldset>
+
+	<button (click)="saveUser()" class="pure-button pure-button-primary">save user</button>
+</form>
