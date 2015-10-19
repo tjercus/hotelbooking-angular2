@@ -1,28 +1,27 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
-//import {RouterLink, RouteConfig, Router, Route, RouterOutlet, Location, RouteParams} from 'angular2/router';
+import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, EventEmitter} from 'angular2/angular2';
 import {RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {User}  from './User';
 import {HotelbookingServiceImpl} from '../../services/HotelbookingServiceImpl';
 
 @Component({
-  selector: 'about',
+  selector: 'user-edit',
   templateUrl: './components/user/userEdit.html',
   viewBindings: [HotelbookingServiceImpl],
-  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, FORM_DIRECTIVES],
+  events: ['saveUserEventEmitter']
 })
 export class UserEditComponent {
   private user:User;
+  private saveUserEventEmitter: EventEmitter = new EventEmitter();
 
   constructor(private hotelbookingService:HotelbookingServiceImpl, private params: RouteParams) {
-    // TODO how to get id from router
     this.user = hotelbookingService.findUserById(params.get('id'));
   }
 
   saveUser() {
     this.hotelbookingService.saveUser(this.user);
-    // TODO use eventEmitter of EventBus
-    //this.$rootScope.$broadcast("user.saved");
+    this.saveUserEventEmitter.next('user.saved');
   }
 }
 

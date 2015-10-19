@@ -19,7 +19,6 @@
 				<td>{{user.name}}</td>
 				<td>{{user.email}}</td>
 				<td>
-          <!-- TODO handle button -->
 					<button class="pure-button" [router-link]="['/UserEdit', {'id': user.id}]">edit</button>
 				</td>
 			</tr>
@@ -29,6 +28,6 @@
 	</div>
 
   <!-- TODO link userEdit -->
-	<div ui-view="userEdit" class="user-edit-panel"></div>
+	<user-edit class="user-edit-panel" (save-user-event-emitter)="onUpdate($event)"></user-edit>
 
 </section>

@@ -1,21 +1,21 @@
 import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
-//import {RouterLink, RouteConfig, Router, Route, RouterOutlet, Location, RouteParams} from 'angular2/router';
-import {RouterLink} from 'angular2/router';
+import {RouterLink, RouteParams, ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {User}  from './User';
 import {HotelbookingServiceImpl} from '../../services/HotelbookingServiceImpl';
+import {UserEditComponent}  from './UserEditComponent';
 
 @Component({
-  selector: 'about',
-  templateUrl: './components/user/userEdit.html',
+  selector: 'users',
+  templateUrl: './components/user/users.html',
   viewBindings: [HotelbookingServiceImpl],
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, RouterLink]
+  directives: [CORE_DIRECTIVES, ROUTER_DIRECTIVES, FORM_DIRECTIVES, RouterLink, UserEditComponent]
 })
 
 export class UsersComponent {
   private users:Array<User> = [];
 
-  constructor(private hotelbookingService:HotelbookingServiceImpl) {
+  constructor(private hotelbookingService:HotelbookingServiceImpl, private params:RouteParams) {
     console.log('UsersControler.constructor');
 
     this.users = hotelbookingService.getUsers();
@@ -27,12 +27,11 @@ export class UsersComponent {
     } else {
       console.log('UsersController not reloading users');
     }
+  }
 
-    // TODO fix
-    //this.$rootScope.$on('user.saved', () => {
-    //  console.log('caught user.saved event');
-    //  this.users = this.hotelbookingService.getUsers();
-    //});
+  onUpdate(event) {
+    console.log('parent (UsersComponent) caught event passed by child (UserEditComponent): ' + event.value);
+    this.users = this.hotelbookingService.getUsers();
   }
 }
 

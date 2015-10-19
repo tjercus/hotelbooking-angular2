@@ -8,13 +8,19 @@ This application is by no means 'feature complete', 'best practise' or using all
 It does show
  * using a modern build chain with Gulp and TypeScript
  * using Angular 2
- * ... 
+ * using Angular 2 routing
+ * Event passing from child component (UserEditComponent) to parent component (UsersComponent) via EventEmitter
 
 Notes
  * validation is programmed into the components. I tried to use Angular's built in formvalidation and two higly regarded plugins,
   but could not get them 100% working. Regardless of this, I do prefer not to place validation logic in templates.
  * unit testing, integration testing and functional testing is still under development
 
+### TODO
+ 
+ * Unit tests for components
+ * fix watermark bug
+ * fix validation
 
 ### Install dependencies
 

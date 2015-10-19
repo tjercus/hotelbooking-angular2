@@ -6,7 +6,6 @@ import {OffersComponent} from './components/offers/OffersComponent';
 import {CartComponent} from './components/cart/CartComponent';
 import {RegistrationComponent} from './components/registration/RegistrationComponent';
 import {UsersComponent} from './components/user/UsersComponent';
-import {UserEditComponent} from './components/user/UserEditComponent';
 
 //import {HotelbookingServiceImpl} from './services/HotelbookingServiceImpl';
 
@@ -22,7 +21,7 @@ import {UserEditComponent} from './components/user/UserEditComponent';
   { path: '/cart', component: CartComponent, as: 'Cart' },
   { path: '/registration', component: RegistrationComponent, as: 'Registration' },
   { path: '/users', component: UsersComponent, as: 'Users' },
-  { path: '/users/:id', component: UserEditComponent, as: 'UserEdit' }
+  { path: '/users/:id', component: UsersComponent, as: 'UserEdit' }
 ])
 class App {}
 

@@ -11,7 +11,7 @@ body {
     font-family: 'Capita-Light', serif;
     font-size: 14px;
     color: #666965;
-    background-image: url("../img/watermark.png");
+    background-image: url("watermark.png");
     background-size: cover;
 }
 h1,h2,h3,h4, h5, h6 {
