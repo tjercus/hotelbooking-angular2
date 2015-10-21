@@ -31,7 +31,7 @@ export class RegistrationComponent {
   private errorMessages:Array<string> = [];
 
   constructor() {
-    console.log('RegistrationController: constructor: ' + this.currentFormPart);
+    console.log('RegistrationComponent: constructor: ' + this.currentFormPart);
     this.user = new User();
   }
 
